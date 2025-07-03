@@ -162,7 +162,6 @@ jobs:
           tag_name: ${{needs.job_check.outputs.passwall_version}}
           files: ${{ env.FIRMWARE }}/passwall/*.[ai]pk
 
-
   job_auto_compile:
     if: ${{ needs.job_check.outputs.has_update == 'true' && needs.job_check.outputs.prerelease == 'false' }}
     needs: job_check
