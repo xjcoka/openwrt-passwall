@@ -79,10 +79,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - sdk_ver: "21.02"
-            luci_ver: "19.07"
-            sdk_url: https://downloads.openwrt.org/releases/21.02.7/targets/x86/64/openwrt-sdk-21.02.7-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-
           - sdk_ver: "24.10"
             luci_ver: "24.10"
             sdk_url: https://downloads.openwrt.org/releases/24.10.1/targets/x86/64/openwrt-sdk-24.10.1-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
@@ -164,7 +160,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{needs.job_check.outputs.passwall_version}}
-          files: ${{ env.FIRMWARE }}/passwall/*.ipk
+          files: ${{ env.FIRMWARE }}/passwall/*.[ai]pk
 
 
   job_auto_compile:
